@@ -1,7 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
-import Image from 'next/image';
 import { Navigation } from '@/components/Navigation';
 import { BackgroundAnimation } from '@/components/BackgroundAnimation';
 import { HeroSection } from '@/components/HeroSection';
@@ -14,25 +12,6 @@ import { Footer } from '@/components/Footer';
 import { ProjectModal } from '@/components/ProjectModal';
 
 export default function Home() {
-  useEffect(() => {
-    // Smooth scroll behavior
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#' && document.querySelector(href)) {
-          e.preventDefault();
-          const target = document.querySelector(href);
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        }
-      });
-    });
-  }, []);
-
   return (
     <>
       <BackgroundAnimation />
